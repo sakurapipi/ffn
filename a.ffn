@@ -1,0 +1,27 @@
+#output >>>>>>>>>>>
+output ----------------------
+output |       菠萝手机      |
+output |5G         [//]100%  |
+output |                     |
+output | QQ-999条新消息      |
+output | VX-999条新消息      |
+output |                     |
+output |                     |
+output | 比利王邀请你去摔♂跤|
+output | 2020/12/32          |
+output | 去|不去             |
+output |                     |
+output |                     |
+output |                     |
+output |                     |
+output |                     |
+output |                     |
+output |                     |
+output ----------------------
+input 是否炸毁
+output 不管你选是不是都要炸毁，因为if我还没做(仰天大笑)
+stop 3
+output 放置炸弹中...
+ClearScreen
+stop 1
+return 
