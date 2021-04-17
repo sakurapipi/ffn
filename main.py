@@ -20,7 +20,7 @@ import requests
 import random
 import platform
 import sys
-cdkey="";logtext = """FFn(c) 2077\nBy Pipi\nThis is FFn Log"""+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))
+cdkey="";
 if (len(sys.argv)!=2):
 	for i in range(4):
 		cdkey+="-"
@@ -162,7 +162,7 @@ class main():
 
 
 
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]output :"+out)
+								
 
 
 							# input
@@ -176,8 +176,7 @@ class main():
 									except IndexError:
 										pass
 								temp = input(tempinput)
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]input :"+tempinput)
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]answer :"+temp)
+								
 								print(temp)
 								del CommandLen,command,temp,tempinput
 
@@ -190,11 +189,11 @@ class main():
 
 							# help
 							elif(command=="help"):
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]get help")
+								
 								help()
 							# exit
 							elif(command=="exit"or command=="esc"):
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]Exit")
+								
 								exit()
 							# math 2020/12/15
 							elif(command[0]=="m" and command[1]=="a" and command[2]=="t" and command[3]=="h"):
@@ -227,14 +226,9 @@ class main():
 									tmp=print("You can't let the divisor be 0")
 								except SyntaxError:
 									tmp=print("You must enter numbers")
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]math :"+tempoutput+"="+str(tmp))
+								
 								del CommandLen,command,temp,tempoutput,tmp
-							# log 2020/12/19
-							elif (command == "log"):
-								print("\n",logtext,"\n")
-								with open('log.log', 'w') as f:
-									f.writelines(logtext)
-									f.flush()
+
 							# ip 2020/12/25
 							elif (command == "ip.get"):
 								print(get_host_ip())
@@ -243,10 +237,10 @@ class main():
 							elif (command == "cd"):
 								if (os.path.exists('cd')==True):
 									file_name("cd")
-									logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]cd :This message does not support logging\n")
+									
 								else:
 									os.makedirs('cd')
-									logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]cd :create\n")
+									
 							#file 2020/1/31
 							elif (command[0] == "r" and command[1] == "e" and command[2] ==  "a" and command[3] == "d"):
 								filename = ''
@@ -263,9 +257,10 @@ class main():
 										else:
 											filename += command[i+5]
 									print("read file:",filename)
-									logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]read :"+filename)
+									
 									result=[]
 								try:
+									filename="".join(filename)
 									xx=0
 									with open(filename,'r',encoding='utf-8') as f:
 										syntax["TEXT.tmp.line\"{}\"".format("all")]=f.readlines()
@@ -288,7 +283,7 @@ class main():
 								for i in range(len(command)-6):
 									tmpcolor += command[i+6]
 								os.system("color "+tmpcolor+" ")
-								logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]color "+tmpcolor)
+								
 
 							elif (command[0]=='s' and command[1]=='t' and command[2]=='o' and command[3]=='p'):
 								stoptmp = ''
@@ -440,7 +435,7 @@ class main():
 						except IndexError:
 							pass
 					temp = tempoutput
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]output :"+temp)
+					
 					print(temp)
 					del CommandLen,command,temp,tempoutput
 				# input
@@ -454,19 +449,19 @@ class main():
 						except IndexError:
 							pass
 					temp = input(tempinput)
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]input :"+tempinput)
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]answer :"+temp)
+					
+					
 						# print(temp)
 					del CommandLen,command,temp,tempinput
 
 
 				# help
 				elif(command=="help"):
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]get help")
+					
 					help()
 				# exit
 				elif(command=="exit"or command=="esc"):
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]Exit")
+					
 					exit()
 					# math 2020/12/15
 				elif(command[0]=="m" and command[1]=="a" and command[2]=="t" and command[3]=="h"):
@@ -487,14 +482,9 @@ class main():
 							tmp=print("You can't let the divisor be 0")
 					except SyntaxError:
 						tmp=print("You must enter numbers")
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]math :"+tempoutput+"="+str(tmp))
+					
 					del CommandLen,command,temp,tempoutput,tmp
-				# log 2020/12/19
-				elif (command == "log"):
-					print("\n",logtext,"\n")
-					with open('log.log', 'w') as f:
-						f.writelines(logtext)
-						f.flush()
+
 				# ip 2020/12/25
 				elif (command == "ip.get"):
 					print(get_host_ip())
@@ -502,11 +492,9 @@ class main():
 				elif (command == "cd"):
 					if (os.path.exists('cd')==True):
 						file_name("cd")
-						logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]cd :This message does not support logging\n")
-					else:
+						
 						os.makedirs('cd')
-						logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]cd :create\n")
-				#file 2020/1/31
+						
 				elif (command[0] == "r" and command[1] == "e" and command[2] ==  "a" and command[3] == "d"):
 					filename = ''
 					command += ' '
@@ -516,7 +504,7 @@ class main():
 						for i in range(len(command)-5):
 							filename += command[i+5]
 						print(filename)
-						logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]read :"+filename)
+						
 						result=[]
 					try:
 						with open(filename,'r',encoding='utf-8') as f:
@@ -536,7 +524,7 @@ class main():
 					for i in range(len(command)-6):
 						tmpcolor += command[i+6]
 					os.system("color "+tmpcolor+" ")
-					logtext += str("\nlog"+"["+str(time.strftime("%Y-%m-%d %H:%M:%S",time.localtime()))+"]color "+tmpcolor)
+	
 				elif (command[0]=='s' and command[1]=='t' and command[2]=='o' and command[3]=='p'):
 					stoptmp = ''
 					for i in range(len(command)-5):
